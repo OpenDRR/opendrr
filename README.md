@@ -1,4 +1,4 @@
-# Parent repository for the Open Disaster Risk Reduction Platform. 
+# Parent repository for the Open Disaster Risk Reduction Platform
 
 ## Key repositories:
 
@@ -7,9 +7,9 @@
 * [Data Store](https://github.com/OpenDRR/opendrr-data-store)
 * [Documentation](https://github.com/OpenDRR/documentation)
 
-# Référentiel parent pour la Plate-forme ouverte de réduction des risques de catastrophe. 
+# Référentiel parent pour la Plate-forme ouverte de réduction des risques de catastrophe
 
-## Référentiels clés :
+## Référentiels clés:
 
 * [RiskProfiler](https://github.com/OpenDRR/riskprofiler)
 * [Model Factory](https://github.com/OpenDRR/model-factory)
