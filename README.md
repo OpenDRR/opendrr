@@ -13,7 +13,7 @@ The OpenDRR platform is middleware between hazard or risk modeling environments 
 * [Sprints](https://github.com/OpenDRR/opendrr-platform/wiki)
 
 ## Documentation
-* [Documentation](https://github.com/OpenDRR/opendrr-platform/wiki)
+* [Documentation](https://github.com/OpenDRR/documentation)
 
 # Référentiel parent pour la Plate-forme ouverte de réduction des risques de catastrophe
 
@@ -30,4 +30,4 @@ La plateforme OpenDRR est un intergiciel entre les environnements de modélisati
 * [Sprints](https://github.com/OpenDRR/opendrr-platform/wiki)
 
 ## Documentation
-* [Documentation](https://github.com/OpenDRR/opendrr-platform/wiki)
+* [Documentation](https://github.com/OpenDRR/documentation)
