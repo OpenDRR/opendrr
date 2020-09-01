@@ -15,6 +15,15 @@ The OpenDRR platform is middleware between hazard or risk modeling environments 
 ## Documentation
 * [Documentation](https://github.com/OpenDRR/documentation)
 
+## Contributing
+1. Fork a repository by following the Github guidelines here: https://help.github.com/articles/fork-a-repo using the master repository as the Upstream URL.
+2. Use the following steps to prepare a pull request
+  - git fetch upstream
+  - git checkout upstream/master
+  - git checkout -b my-contribution-description
+  - test your additions
+  - create a pull request
+
 -------------------------------------------------------------------
 
 # Référentiel parent pour la Plate-forme ouverte de réduction des risques de catastrophe
@@ -33,3 +42,12 @@ La plateforme OpenDRR est un intergiciel entre les environnements de modélisati
 
 ## Documentation
 * [Documentation](https://github.com/OpenDRR/documentation)
+
+## Contribuer
+1. Pour trouver un dépôt, suivez les directives de Github : https://help.github.com/articles/fork-a-repo en utilisant le dépôt principal comme URL en amont.
+2. Suivez les étapes suivantes pour préparer une demande d'extraction
+  - git fetch upstream
+  - git checkout upstream/master
+  - git checkout -b my-contribution-description
+  - testez vos ajouts
+  - créer une demande de retrait
