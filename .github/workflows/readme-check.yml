@@ -1,0 +1,35 @@
+name: Check for README.md and LISEZMOI.md
+
+on:
+  push:
+    branches: [action-trigger]
+  workflow_dispatch:
+
+jobs:
+  readme-check:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get list of repos
+      env:
+        TOKEN: ${{ secrets.MY_PAT }}
+      run: |
+        result=`curl -H "Authorization: $TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/orgs/OpenDRR/repos?per_page=100 | jq .[].name | tr -d \"`
+        results=($result)
+        for REPO in "${results[@]}"
+        do
+          RESPONSE=`curl -i https://api.github.com/repos/OpenDRR/$REPO/contents/README.md --write-out "%{http_code}\n" --output /dev/null --silent`
+          FRESPONSE=`curl -i -H "Authorization: $TOKEN" https://api.github.com/repos/OpenDRR/$REPO/contents/LISEZMOI.md --write-out "%{http_code}\n" --output /dev/null --silent`
+          if [ $RESPONSE == 404 ] && [ $FRESPONSE == 404 ]
+          then
+            curl -X POST -H "Authorization: token $TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/OpenDRR/$REPO/issues -d '{"title":"Add README.md and LISEZMOI.md files"}'
+            echo Issue to add README.md and LISEZMOI.md created in $REPO
+          elif [ $FRESPONSE == 404 ]
+          then
+            curl -X POST -H "Authorization: token $TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/OpenDRR/$REPO/issues -d '{"title":"Add LISEZMOI.md file"}'
+            echo Issue to add LISEZMOI.md created in $REPO
+          elif [ $RESPONSE == 404 ]
+          then
+            curl -X POST -H "Authorization: token $TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/OpenDRR/$REPO/issues -d '{"title":"Add README.md file"}'
+            echo Issue to add README.md created in $REPO
+          fi
+        done
